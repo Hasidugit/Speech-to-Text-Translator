@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Speech to Text Translator",
+    "version": "1.0",
+    "description": "Translates sound to text using the Web Speech API.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.jpg",
+        "48": "icon.jpg",
+        "128": "icon.jpg"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "icons": {
+      "16": "icon.jpg",
+      "48": "icon.jpg",
+      "128": "icon.jpg"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://alison.com/topic/learn/83075/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
